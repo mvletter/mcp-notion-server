@@ -251,7 +251,16 @@ All tools support the following optional parameter:
      - `database_id` (string): The ID of the database to retrieve.
    - Returns: Detailed information about the database.
 
-10. `notion_update_database`
+10. notion_update_block
+
+   * Update the content of a block in Notion based on its type. The update replaces the entire value for a given field.
+   * Required inputs:
+
+     + block_id (string): The ID of the block to update.
+     + block (object): The updated content for the block. Must match the block's type schema.
+   * Returns: Information about the updated block.
+
+11. `notion_update_database`
 
     - Update information about a database.
     - Required inputs:
@@ -262,7 +271,7 @@ All tools support the following optional parameter:
       - `properties` (object): Updated property schema.
     - Returns: Information about the updated database.
 
-11. `notion_create_database_item`
+12. `notion_create_database_item`
 
     - Create a new item in a Notion database.
     - Required inputs:
@@ -270,7 +279,7 @@ All tools support the following optional parameter:
       - `properties` (object): The properties of the new item. These should match the database schema.
     - Returns: Information about the newly created item.
 
-12. `notion_search`
+13. `notion_search`
 
     - Search pages or databases by title.
     - Optional inputs:
@@ -281,7 +290,7 @@ All tools support the following optional parameter:
       - `page_size` (number, default: 100, max: 100): Number of results to retrieve.
     - Returns: List of matching pages or databases.
 
-13. `notion_list_all_users`
+14. `notion_list_all_users`
 
     - List all users in the Notion workspace.
     - Note: This function requires upgrading to the Notion Enterprise plan and using an Organization API key to avoid permission errors.
@@ -290,7 +299,7 @@ All tools support the following optional parameter:
       - page_size (number, max: 100): Number of users to retrieve.
     - Returns: A paginated list of all users in the workspace.
 
-14. `notion_retrieve_user`
+15. `notion_retrieve_user`
 
     - Retrieve a specific user by user_id in Notion.
     - Note: This function requires upgrading to the Notion Enterprise plan and using an Organization API key to avoid permission errors.
@@ -298,12 +307,12 @@ All tools support the following optional parameter:
       - user_id (string): The ID of the user to retrieve.
     - Returns: Detailed information about the specified user.
 
-15. `notion_retrieve_bot_user`
+16. `notion_retrieve_bot_user`
 
     - Retrieve the bot user associated with the current token in Notion.
     - Returns: Information about the bot user, including details of the person who authorized the integration.
 
-16. `notion_create_comment`
+17. `notion_create_comment`
 
     - Create a comment in Notion.
     - Requires the integration to have 'insert comment' capabilities.
@@ -315,7 +324,7 @@ All tools support the following optional parameter:
       - `discussion_id` (string): An existing discussion thread ID.
     - Returns: Information about the created comment.
 
-17. `notion_retrieve_comments`
+18. `notion_retrieve_comments`
     - Retrieve a list of unresolved comments from a Notion page or block.
     - Requires the integration to have 'read comment' capabilities.
     - Required inputs:
